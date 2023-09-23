@@ -1,7 +1,8 @@
+
 const Shop = () => {
   return (
     <div>
-      <h1>ShopPage</h1>
+      <h1>Shop</h1>
     </div>
   );
 };
