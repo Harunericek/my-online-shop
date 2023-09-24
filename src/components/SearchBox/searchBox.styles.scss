@@ -1,11 +1,13 @@
-.searchFieldContainer {
+.search-box-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70px;
     font-size: 30px;
-}
-
-.searchField {
+    padding-bottom: 20px;
+    
+    .search-box {
+    height: 70px;
     text-align: center;
 }
+}
+

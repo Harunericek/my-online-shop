@@ -1,6 +1,7 @@
 import Card from "../../Cards/card.component";
 import { Link } from "react-router-dom";
 import "../home/categories.styles.scss";
+import "../../SearchBox/searchBox.styles.scss";
 import { useState } from "react";
 
 const ShopHats = () => {
@@ -41,23 +42,26 @@ const ShopHats = () => {
         "https://media.istockphoto.com/id/537893112/photo/adult-golf-blue-visor.webp?b=1&s=612x612&w=0&k=20&c=pQl5UevjHvthDw0mDsri50vnEoXELyE46rwQflxrXW0=",
     },
   ];
-  const [filteredHats, setFilter] = useState(HatCategories)
+  const [filteredHats, setFilter] = useState(HatCategories);
   const handleChange = (event) => {
     let searchString = event.target.value.toLowerCase();
     const filteredHats = HatCategories.filter((hat) => {
-      return hat.title.toLowerCase().includes(searchString)
-    })
-    setFilter(filteredHats)
+      return hat.title.toLowerCase().includes(searchString);
+    });
+    setFilter(filteredHats);
   };
 
   return (
     <>
-      <input
-        className="search-Box"
-        placeholder="Search for Product"
-        type="search"
-        onChange={handleChange}
-      />
+      <div className="search-box-container">
+        <input
+          className="search-box"
+          placeholder="Search for Product"
+          type="search"
+          onChange={handleChange}
+        />
+      </div>
+
       <div className="categories-container">
         {filteredHats.map(({ title, id, imageUrl, path }) => {
           return (
